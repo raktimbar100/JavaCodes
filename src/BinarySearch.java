@@ -9,31 +9,27 @@ class BinarySearch {
             arr[i]=sc.nextInt();
         }
         int key=sc.nextInt();
-        boolean b=bs(arr,key);
-//        if(bs(arr,key))
-//            System.out.println("Found");
-//        else
-//            System.out.println("Not Found");
-        System.out.println(b);
+        int index=search(arr,key);
+        System.out.println(index);
     }
-    static boolean bs(int[] arr,int key){
+    static int search(int[] nums, int target) {
         int start=0;
-        int end=arr.length-1;
+        int end=nums.length-1;
         while(start<=end){
-            int mid=(start+end)/2;
-            if(arr[mid]==key){
-                return true;
+            int mid=(start+(end-start)/2);
+            if(nums[mid]==target){
+                return mid;
             }
-            if(arr[mid]<key)
+            if(nums[mid]<target)
             {
                 start=mid+1;
             }
-            if(arr[mid]>key){
+            if(nums[mid]>target){
                 end=mid-1;
             }
 
         }
 
-        return false;
+        return -1;
     }
 }
