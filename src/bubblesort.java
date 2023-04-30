@@ -8,7 +8,7 @@ class BubbleSort {
     static int[] bubble(int[] arr)
     {
         boolean flag;
-        for(int i=0;i<arr.length-1;i++)
+        for(int i=0;i<arr.length;i++)
         {
             flag=false;
             for(int j=1;j<arr.length-i;j++)
